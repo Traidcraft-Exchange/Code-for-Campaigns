@@ -1,0 +1,32 @@
+<!-- Split test whether the presence of a link shown on mobile to jump down to the form increases conversion rate or not. Started 20/02/2020 15:00-->
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let abField = select('input[name="submitted[ab_mobile_link]"]');
+
+        if (AorB === "A") {
+
+            // Put what to do for Group A here
+            // Show button, record that button was available and if button was on screen or not
+
+            let buttonOnScreen = (window.innerWidth < 780)
+                ? "and on a mobile screen so button was visible."
+                : "but on a desktop screen so button was not visible.";
+
+            let logMessage = `A. Button was available, ${buttonOnScreen}`
+            fillField(abField, logMessage)
+
+        } else {
+            // Put what to do for Group B here
+            // Hide button, record that button wasn't available.
+
+            const mobileLinkToForm = select("#mobile-link-to-form");
+            hide(mobileLinkToForm);
+
+            let logMessage = "B. Button was unavailable for mobile and desktop."
+            fillField(abField, logMessage)
+
+        }
+
+    });
+</script>
