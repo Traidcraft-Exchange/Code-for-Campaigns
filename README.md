@@ -1,3 +1,3 @@
 # Campaign Scripts
 
-Scripts to help us with campaigns
+Javascript scripts to help us with campaigns
