@@ -39,7 +39,7 @@ function hide(element) {
 
 // Change or Set text of an element
 function setText(str) {
-    return this.textContent = str;
+    return this.innerText = str;
 }
 
 const someText = select(".title");
