@@ -31,25 +31,38 @@ function select(css_selector) {
 function show(element) {
     return element.style.display = "";
 }
+// const someElement = select(".css-selector");
+// show(someElement);
+
 
 // Hide a visible element
 function hide(element) {
     return element.style.display = "none";
 }
+// const someElement = select(".css-selector");
+// hide(someElement);
+
 
 // Change or Set text of an element
-function setText(str) {
-    return this.innerText = str;
+function setText(textElement, newString) {
+    return textElement.innerText = newString;
 }
+// const someTextElement = select(".title");
+// setText(someTextElement, "New text");
 
-const someText = select(".title");
-someText.setText("New text");
 
 // Change or Set the content of a form field
-function fillField(str) {
-    return this.value = str;
+function fillField(inputElement, stringToAdd) {
+    return inputElement.value = stringToAdd;
 }
+// const someInputElement = select("input");
+// fillField(someInputElement, "New text in field");
 
-function logThis() {
-    console.log(this)
+
+// Change an image (and alt text)
+function swapImage(currentImage, newImageSource, newImageAltText = "") {
+    currentImage.setAttribute("src", newImageSource);
+    currentImage.setAttribute("alt", newImageAltText);
 }
+// const someImage = select("#main-image");
+// swapImage(img, "linktoyournewimage.com", "new alt text")
