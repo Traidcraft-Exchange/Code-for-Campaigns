@@ -210,7 +210,6 @@ A + group 3 => v5
 B + group 3 => v6
 
 ```javascript
-
 function generateAB() {
     return (Math.random() > 0.5) ? "A" : "B";
 }
