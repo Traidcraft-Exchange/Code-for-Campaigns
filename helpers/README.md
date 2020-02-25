@@ -3,7 +3,7 @@
 Add the helper scripts you need into the HTML of your page. Also add the script to make use of that helper script. The examples in use show how to do that.
 
 - [Helper scripts to make some things easier](#helper-scripts-to-make-some-things-easier)
-  - [Generate A or B for split tests](#generate-a-or-b-for-split-tests)
+  - [Generate A or B for split test](#generate-a-or-b-for-split-test)
     - [Example in use](#example-in-use)
   - [Get query strings from a URL](#get-query-strings-from-a-url)
     - [Example in use](#example-in-use-1)
@@ -20,7 +20,7 @@ Add the helper scripts you need into the HTML of your page. Also add the script 
   - [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
     - [Example in use](#example-in-use-7)
 
-## Generate A or B for split tests
+## Generate A or B for split test
 
 Use this to assign A or B to every visitor to a webpage.
 
