@@ -1,3 +1,3 @@
-# Campaign Scripts
+# Code to help with campaigns
 
-Javascript scripts to help us with campaigns
+This is mainly for Campaignion but could be useful in other places like Squarespace too
