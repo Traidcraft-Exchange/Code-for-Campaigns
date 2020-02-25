@@ -1,17 +1,19 @@
 # Helper scripts to make some things easier
 
+These could be used anywhere.
+
 Add the helper scripts you need into the HTML of your page within \<script\> tags. Also add the script to make use of that helper script. The examples in use show how to do that.
 
-- [Helper scripts to make some things easier](#helper-scripts-to-make-some-things-easier)
-  - [Generate A or B for split test](#generate-a-or-b-for-split-test)
-  - [Get query strings from a URL](#get-query-strings-from-a-url)
-  - [Detect screen width](#detect-screen-width)
-  - [Easy selector](#easy-selector)
-  - [Reveal / Show a hidden element](#reveal--show-a-hidden-element)
-  - [Hide a visible element](#hide-a-visible-element)
-  - [Change or Set text of an element](#change-or-set-text-of-an-element)
-  - [Change or Set the content of a form field](#change-or-set-the-content-of-a-form-field)
-  - [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
+- [Generate A or B for split test](#generate-a-or-b-for-split-test)
+- [Get query strings from a URL](#get-query-strings-from-a-url)
+- [Detect screen width](#detect-screen-width)
+- [Saving split-test group to hidden field](#saving-split-test-group-to-hidden-field)
+- [Easy selector](#easy-selector)
+- [Reveal / Show a hidden element](#reveal--show-a-hidden-element)
+- [Hide a visible element](#hide-a-visible-element)
+- [Change or Set text of an element](#change-or-set-text-of-an-element)
+- [Change or Set the content of a form field](#change-or-set-the-content-of-a-form-field)
+- [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
 
 ## Generate A or B for split test
 
@@ -86,6 +88,16 @@ if (screenWidth === "mobile") {
 } else {
     // Put what to do for 'desktop' here
 }
+```
+
+## Saving split-test group to hidden field
+
+Save the split-test group into a hidden field.
+
+```javascript
+let abField = select('input[name="submitted[form_key_of_hidden_field]"]');
+let splitTestGroupIdentifier = `identifier for split-test group`;
+fillField(abField, splitTestGroupIdentifier);
 ```
 
 ## Easy selector
