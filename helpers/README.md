@@ -14,6 +14,7 @@ Add the helper scripts you need into the HTML of your page within \<script\> tag
 - [Change or Set text of an element](#change-or-set-text-of-an-element)
 - [Change or Set the content of a form field](#change-or-set-the-content-of-a-form-field)
 - [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
+- [Do different AB tests within query string audiences on the same page](#do-different-ab-tests-within-query-string-audiences-on-the-same-page)
 
 ## Generate A or B for split test
 
@@ -190,4 +191,71 @@ function swapImage(currentImage, newImageSource, newImageAltText = "") {
 ```javascript
 const someImage = select("#main-image");
 swapImage(img, "linktoyournewimage.com", "optional new alt text")
+```
+
+## Do different AB tests within query string audiences on the same page
+
+Sometimes, you'll want to run a different split test within different audiences on the same page.
+
+A + group 1 (eg, utm_campaign = em) triggers v1 of the page
+B + group 2 => v2
+
+A + group 3 => v3
+B + group 4 => v4
+
+```javascript
+
+function generateAB() {
+    return (Math.random() > 0.5) ? "A" : "B";
+}
+
+function getQueryStrings(query_string_name) {
+    const all_query_strings = new URL(window.location).search;
+    const searchParams = new URLSearchParams(all_query_strings);
+    return searchParams.get(query_string_name);
+}
+
+const AorB = generateAB();
+const utm_campaign = getQueryStrings("utm_campaign");
+
+const AorB_Campaign = `${AorB}_${utm_campaign}`
+
+switch (AorB_Campaign) {
+    case A_em:
+        // Do what you want with Group A and utm_campaign of 'em'
+        break;
+
+    case B_em:
+        // Do what you want with Group B and utm_campaign of 'em'
+        break;
+
+    case A_ch:
+        // Do what you want with Group A and utm_campaign of 'ch'
+        break;
+
+    case B_ch:
+        // Do what you want with Group B and utm_campaign of 'ch'
+        break;
+
+    case A_hf:
+        // Do what you want with Group A and utm_campaign of 'hf'
+        break;
+
+    case B_hf:
+        // Do what you want with Group B and utm_campaign of 'hf'
+        break;
+
+    case A_:
+        // Do what you want with Group A and no utm_campaign
+        break;
+
+    case B_:
+        // Do what you want with Group B and no utm_campaign
+        break;
+
+    default:
+        // Do something to record something didn't work. Nothing matched
+        // Record the AorB_Campaign variable
+        break;
+}
 ```
