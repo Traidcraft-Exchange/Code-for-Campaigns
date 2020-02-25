@@ -2,6 +2,24 @@
 
 Add the helper scripts you need into the HTML of your page. Also add the script to make use of that helper script. The examples in use show how to do that.
 
+- [Helper scripts to make some things easier](#helper-scripts-to-make-some-things-easier)
+  - [Generate A or B for split tests](#generate-a-or-b-for-split-tests)
+    - [Example in use](#example-in-use)
+  - [Get query strings from a URL](#get-query-strings-from-a-url)
+    - [Example in use](#example-in-use-1)
+  - [Easy selector](#easy-selector)
+    - [Example in use](#example-in-use-2)
+  - [Reveal / Show a hidden element](#reveal--show-a-hidden-element)
+    - [Example in use](#example-in-use-3)
+  - [Hide a visible element](#hide-a-visible-element)
+    - [Example in use](#example-in-use-4)
+  - [Change or Set text of an element](#change-or-set-text-of-an-element)
+    - [Example in use](#example-in-use-5)
+  - [Change or Set the content of a form field](#change-or-set-the-content-of-a-form-field)
+    - [Example in use](#example-in-use-6)
+  - [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
+    - [Example in use](#example-in-use-7)
+
 ## Generate A or B for split tests
 
 Use this to assign A or B to every visitor to a webpage.
@@ -29,9 +47,9 @@ if (AorB === "A") {
 
 Use this to get the query string from the end of a url. There are 3 query strings in this URL: *<https://action.traidcraft.org.uk/our-land-our-rights?utm_source=FB_ads&utm_medium=green_vs_nature&utm_campaign=em>*
 
-* utm_source is FB_ads
-* utm_medium is green_vs_nature
-* utm_campaign is em
+- utm_source is FB_ads
+- utm_medium is green_vs_nature
+- utm_campaign is em
 
 ```javascript
 function getQueryStrings(query_string_name) {
