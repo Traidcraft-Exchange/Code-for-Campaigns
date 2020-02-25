@@ -197,10 +197,12 @@ swapImage(img, "linktoyournewimage.com", "optional new alt text")
 
 Sometimes, you'll want to run a different split test within different audiences on the same page.
 
-A + group 1 (eg, utm_campaign = em) triggers v1 of the page
+A (eg, AorB = A) and group 1 (eg, utm_campaign = em) triggers v1 of the page
+
 B + group 2 => v2
 
 A + group 3 => v3
+
 B + group 4 => v4
 
 ```javascript
