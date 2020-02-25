@@ -78,12 +78,13 @@ let screenWidth = (window.innerWidth < 780) ? "mobile" : "desktop";
 
 ```javascript
 let screenWidth = (window.innerWidth < 780) ? "mobile" : "desktop";
+
 if (screenWidth === "mobile") {
     // Put what to do for 'mobile' here
     // Probably one of the things lower down on this page
 
 } else {
-    // Put what to do for not 'desktop' here
+    // Put what to do for 'desktop' here
 }
 ```
 
