@@ -177,5 +177,5 @@ function swapImage(currentImage, newImageSource, newImageAltText = "") {
 
 ```javascript
 const someImage = select("#main-image");
-swapImage(img, "linktoyournewimage.com", "new alt text")
+swapImage(img, "linktoyournewimage.com", "optional new alt text")
 ```
