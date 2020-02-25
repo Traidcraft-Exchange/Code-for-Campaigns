@@ -1,6 +1,6 @@
 # Helper scripts to make some things easier
 
-Add the helper scripts you need into the HTML of your page. Also add the script to make use of that helper script. The examples in use show how to do that.
+Add the helper scripts you need into the HTML of your page within \<script\> tags. Also add the script to make use of that helper script. The examples in use show how to do that.
 
 - [Helper scripts to make some things easier](#helper-scripts-to-make-some-things-easier)
   - [Generate A or B for split test](#generate-a-or-b-for-split-test)
