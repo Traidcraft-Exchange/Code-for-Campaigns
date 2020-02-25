@@ -5,6 +5,7 @@ Add the helper scripts you need into the HTML of your page. Also add the script 
 - [Helper scripts to make some things easier](#helper-scripts-to-make-some-things-easier)
   - [Generate A or B for split test](#generate-a-or-b-for-split-test)
   - [Get query strings from a URL](#get-query-strings-from-a-url)
+  - [Detect screen width](#detect-screen-width)
   - [Easy selector](#easy-selector)
   - [Reveal / Show a hidden element](#reveal--show-a-hidden-element)
   - [Hide a visible element](#hide-a-visible-element)
@@ -62,6 +63,27 @@ if (utm_campaign === "em") {
 
 } else {
     // Put what to do for not 'em' here
+}
+```
+
+## Detect screen width
+
+The two-column desktop layout on Campaignion starts at 780px.
+
+```javascript
+let screenWidth = (window.innerWidth < 780) ? "mobile" : "desktop";
+```
+
+**Example in use**
+
+```javascript
+let screenWidth = (window.innerWidth < 780) ? "mobile" : "desktop";
+if (screenWidth === "mobile") {
+    // Put what to do for 'mobile' here
+    // Probably one of the things lower down on this page
+
+} else {
+    // Put what to do for not 'desktop' here
 }
 ```
 
