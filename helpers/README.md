@@ -1,8 +1,8 @@
 # Helper scripts to make some things easier
 
-These could be used anywhere.
+So far, these are for Campaignion but they could be used on any webpage.
 
-Add the helper scripts you need into the HTML of your page within \<script\> tags. Also add the script to make use of that helper script. The examples in use show how to do that.
+Add the helper scripts you need into the HTML of your page within \<script\> tags. Then add a script that makes use of that helper script. The examples in use show how to do that.
 
 - [Generate A or B for split test](#generate-a-or-b-for-split-test)
 - [Get query strings from a URL](#get-query-strings-from-a-url)
@@ -199,11 +199,15 @@ Sometimes, you'll want to run a different split test within different audiences 
 
 A (eg, AorB = A) and group 1 (eg, utm_campaign = em) triggers v1 of the page
 
-B + group 2 => v2
+B + group 1 => v2
 
-A + group 3 => v3
+A + group 2 => v3
 
-B + group 4 => v4
+B + group 2 => v4
+
+A + group 3 => v5
+
+B + group 3 => v6
 
 ```javascript
 
