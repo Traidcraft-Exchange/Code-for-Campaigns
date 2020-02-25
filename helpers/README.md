@@ -4,21 +4,13 @@ Add the helper scripts you need into the HTML of your page. Also add the script 
 
 - [Helper scripts to make some things easier](#helper-scripts-to-make-some-things-easier)
   - [Generate A or B for split test](#generate-a-or-b-for-split-test)
-    - [Example in use](#example-in-use)
   - [Get query strings from a URL](#get-query-strings-from-a-url)
-    - [Example in use](#example-in-use-1)
   - [Easy selector](#easy-selector)
-    - [Example in use](#example-in-use-2)
   - [Reveal / Show a hidden element](#reveal--show-a-hidden-element)
-    - [Example in use](#example-in-use-3)
   - [Hide a visible element](#hide-a-visible-element)
-    - [Example in use](#example-in-use-4)
   - [Change or Set text of an element](#change-or-set-text-of-an-element)
-    - [Example in use](#example-in-use-5)
   - [Change or Set the content of a form field](#change-or-set-the-content-of-a-form-field)
-    - [Example in use](#example-in-use-6)
   - [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
-    - [Example in use](#example-in-use-7)
 
 ## Generate A or B for split test
 
@@ -31,7 +23,7 @@ function generateAB() {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 
@@ -59,7 +51,7 @@ function getQueryStrings(query_string_name) {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const utm_campaign = getQueryStrings("utm_campaign");
@@ -83,7 +75,7 @@ function select(css_selector) {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const audience_category_input = select(".any-css-selector");
@@ -97,7 +89,7 @@ function show(element) {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const someElement = select(".css-selector");
@@ -112,7 +104,7 @@ function hide(element) {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const someElement = select(".css-selector");
@@ -127,7 +119,7 @@ function setText(textElement, newString) {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const someTextElement = select(".title");
@@ -142,7 +134,7 @@ function fillField(inputElement, stringToAdd) {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const someInputElement = select("input");
@@ -158,7 +150,7 @@ function swapImage(currentImage, newImageSource, newImageAltText = "") {
 }
 ```
 
-### Example in use
+**Example in use**
 
 ```javascript
 const someImage = select("#main-image");
