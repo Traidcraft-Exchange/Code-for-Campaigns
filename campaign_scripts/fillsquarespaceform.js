@@ -1,5 +1,6 @@
 // A script to fill in hidden fields in a Squarespace form using utm values in a URL
-
+// Run this through Babel
+// Might be able to do DOMContentloaded instead of these hacking waits
 <script defer>
     addClickListener();
     async function addClickListener() {

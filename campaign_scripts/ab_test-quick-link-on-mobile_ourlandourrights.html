@@ -1,38 +1,26 @@
 <!-- Split test whether the presence of a link shown on mobile to jump down to the form increases conversion rate or not. Started 20/02/2020 15:00-->
-
+<!-- Requires the select, fillField and hide helper function-->
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        let abField = select('input[name="submitted[ab_mobile_link]"]');
+    document.addEventListener('DOMContentLoaded', function (event) {
+        var abField = select('input[name="submitted[ab_mobile_link]"]');
 
         if (AorB === "A") {
-
             // Put what to do for Group A here
             // Show button, record that button was shown and if button was on screen or not
-
-            let buttonOnScreen = (window.innerWidth < 780)
-                ? "and on a mobile screen so button was visible."
-                : "but on a desktop screen so button was not visible.";
-
-            let logMessage = `A. Button was available, ${buttonOnScreen}`;
-
+            var buttonOnScreen = window.innerWidth < 780 ? "and on a mobile screen so button was visible." : "but on a desktop screen so button was not visible.";
+            var logMessage = "A. Button was available, ".concat(buttonOnScreen);
             fillField(abField, logMessage);
-
         } else {
             // Put what to do for Group B here
             // Hide button, record that button wasn't shown
-
-            const mobileLinkToForm = select("#mobile-link-to-form");
+            var mobileLinkToForm = select("#mobile-link-to-form");
             hide(mobileLinkToForm);
 
-            let buttonOnScreen = (window.innerWidth < 780)
-            ? "and on a mobile screen."
-            : "and on a desktop screen.";
+            var _buttonOnScreen = window.innerWidth < 780 ? "and on a mobile screen." : "and on a desktop screen.";
 
-            let logMessage = `B. Button was unavailable, ${buttonOnScreen}`;
+            var _logMessage = "B. Button was unavailable, ".concat(_buttonOnScreen);
 
-            fillField(abField, logMessage);
-
+            fillField(abField, _logMessage);
         }
-
     });
 </script>

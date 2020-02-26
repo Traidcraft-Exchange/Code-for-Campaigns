@@ -4,6 +4,8 @@ So far, these are for Campaignion but they could be used on any webpage.
 
 Add the helper scripts you need into the HTML of your page within \<script\> tags. Then add a script that makes use of that helper script. The examples in use show how to do that.
 
+It's using old-school Javascript (ES5) so you can use it without worrying about it not working on Internet Explorer.
+
 - [Generate A or B for split test](#generate-a-or-b-for-split-test)
 - [Get query strings from a URL](#get-query-strings-from-a-url)
 - [Detect screen width](#detect-screen-width)
@@ -21,7 +23,7 @@ Add the helper scripts you need into the HTML of your page within \<script\> tag
 Use this to assign A or B to every visitor to a webpage.
 
 ```javascript
-let AorB = generateAB();
+var AorB = generateAB();
 function generateAB() {
     return (Math.random() > 0.5) ? "A" : "B";
 }
@@ -48,17 +50,19 @@ Use this to get the query string from the end of a url. There are 3 query string
 - utm_campaign is em
 
 ```javascript
-function getQueryStrings(query_string_name) {
-    const all_query_strings = new URL(window.location).search;
-    const searchParams = new URLSearchParams(all_query_strings);
-    return searchParams.get(query_string_name);
-}
+function getQueryString(name) {
+    var result = location.href.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+    if (result == null || result.length < 1) {
+        return "";
+    }
+    return decodeURIComponent(result[1]);
+};
 ```
 
 **Example in use**
 
 ```javascript
-const utm_campaign = getQueryStrings("utm_campaign");
+var utm_campaign = getQueryStrings("utm_campaign");
 
 if (utm_campaign === "em") {
     // Put what to do for 'em' here
@@ -74,18 +78,17 @@ if (utm_campaign === "em") {
 The two-column desktop layout on Campaignion starts at 780px.
 
 ```javascript
-let screenWidth = (window.innerWidth < 780) ? "mobile" : "desktop";
+var screenWidth = window.innerWidth < 780 ? "mobile" : "desktop";
 ```
 
 **Example in use**
 
 ```javascript
-let screenWidth = (window.innerWidth < 780) ? "mobile" : "desktop";
+var screenWidth = window.innerWidth < 780 ? "mobile" : "desktop";
 
 if (screenWidth === "mobile") {
     // Put what to do for 'mobile' here
     // Probably one of the things lower down on this page
-
 } else {
     // Put what to do for 'desktop' here
 }
@@ -96,8 +99,8 @@ if (screenWidth === "mobile") {
 Save the split-test group into a hidden field.
 
 ```javascript
-let abField = select('input[name="submitted[form_key_of_hidden_field]"]');
-let splitTestGroupIdentifier = `identifier for split-test group`;
+var abField = select('input[name="submitted[form_key_of_hidden_field]"]');
+var splitTestGroupIdentifier = "identifier for split-test group";
 fillField(abField, splitTestGroupIdentifier);
 ```
 
@@ -114,7 +117,7 @@ function select(css_selector) {
 **Example in use**
 
 ```javascript
-const audience_category_input = select(".any-css-selector");
+var audience_category_input = select(".any-css-selector");
 ```
 
 ## Reveal / Show a hidden element
@@ -128,7 +131,7 @@ function show(element) {
 **Example in use**
 
 ```javascript
-const someElement = select(".css-selector");
+var someElement = select(".css-selector");
 show(someElement);
 ```
 
@@ -143,7 +146,7 @@ function hide(element) {
 **Example in use**
 
 ```javascript
-const someElement = select(".css-selector");
+var someElement = select(".css-selector");
 hide(someElement);
 ```
 
@@ -158,7 +161,7 @@ function setText(textElement, newString) {
 **Example in use**
 
 ```javascript
-const someTextElement = select(".title");
+var someTextElement = select(".title");
 setText(someTextElement, "New text");
 ```
 
@@ -173,23 +176,24 @@ function fillField(inputElement, stringToAdd) {
 **Example in use**
 
 ```javascript
-const someInputElement = select("input");
+var someInputElement = select("input");
 fillField(someInputElement, "New text in field");
 ```
 
 ## Change an image (and optionally the alt text)
 
 ```javascript
-function swapImage(currentImage, newImageSource, newImageAltText = "") {
-    currentImage.setAttribute("src", newImageSource);  
-    currentImage.setAttribute("alt", newImageAltText);
+function swapImage(currentImage, newImageSource) {
+  var newImageAltText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+  currentImage.setAttribute("src", newImageSource);
+  currentImage.setAttribute("alt", newImageAltText);
 }
 ```
 
 **Example in use**
 
 ```javascript
-const someImage = select("#main-image");
+var someImage = select("#main-image");
 swapImage(img, "linktoyournewimage.com", "optional new alt text")
 ```
 
@@ -215,15 +219,15 @@ function generateAB() {
 }
 
 function getQueryStrings(query_string_name) {
-    const all_query_strings = new URL(window.location).search;
-    const searchParams = new URLSearchParams(all_query_strings);
+    var all_query_strings = new URL(window.location).search;
+    var searchParams = new URLSearchParams(all_query_strings);
     return searchParams.get(query_string_name);
 }
 
-const AorB = generateAB();
-const utm_campaign = getQueryStrings("utm_campaign");
+var AorB = generateAB();
+var utm_campaign = getQueryStrings("utm_campaign");
 
-const AorB_Campaign = `${AorB}_${utm_campaign}`
+var AorB_Campaign = `${AorB}_${utm_campaign}`
 
 switch (AorB_Campaign) {
     case A_em:
