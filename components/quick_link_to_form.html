@@ -1,0 +1,31 @@
+<!--
+On mobile, it can take a lot of scrolling to get to the form on Campaignion.
+
+These styles and HTML will add a button that jumps the user down to the form on Campaignion's mobile layout.
+-->
+
+
+<!-- These styles make the quick jump smooth, and hide the button unless it's the mobile, one-column layout. -->
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media screen and (min-width: 520px) and (max-width:780px) {
+        .button.hide-on-tablet {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 780px) {
+        .button.hide-on-desktop {
+            display: none;
+        }
+    }
+</style>
+
+<!-- Put this near the top of your copy after a line or two of into -->
+<p>
+    <a class="button hide-on-desktop" href="#sidebar-second" id="mobile-link-to-form">Text in the button</a>
+</p>
