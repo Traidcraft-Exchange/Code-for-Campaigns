@@ -213,7 +213,7 @@ function insertStyles(styleblock) {
 
 **Example in use**
 
-The styles that go in the *styleblock* variable should be minified using a service like <https://css.github.io/csso/csso.html>
+**Important**: The styles that go in the *styleblock* variable must be minified using a service like <https://css.github.io/csso/csso.html>
 
 ```javascript
 var styleblock = "h1{color:blue}.class-name{color:green}#id-name{color:red}";
