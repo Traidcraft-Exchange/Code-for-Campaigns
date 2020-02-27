@@ -16,6 +16,7 @@ It's using old-school Javascript (ES5) so you can use it without worrying about 
 - [Change or Set text of an element](#change-or-set-text-of-an-element)
 - [Change or Set the content of a form field](#change-or-set-the-content-of-a-form-field)
 - [Change an image (and optionally the alt text)](#change-an-image-and-optionally-the-alt-text)
+- [Insert CSS styles](#insert-css-styles)
 - [Do different AB tests within query string audiences on the same page](#do-different-ab-tests-within-query-string-audiences-on-the-same-page)
 
 ## Generate A or B for split test
@@ -197,9 +198,9 @@ var someImage = select("#main-image");
 swapImage(img, "linktoyournewimage.com", "optional new alt text")
 ```
 
-## Insert styles
+## Insert CSS styles
 
-Use this to insert new CSS styles using Javascript.
+Use this to insert new global CSS styles into a page using Javascript.
 
 ```javascript
 function insertStyles(styleblock) {
@@ -218,7 +219,6 @@ The styles that go in the *styleblock* variable should be minified using a servi
 var styleblock = "h1{color:blue}.class-name{color:green}#id-name{color:red}";
 insertStyles(styleblock);
 ```
-
 
 ## Do different AB tests within query string audiences on the same page
 
