@@ -197,6 +197,29 @@ var someImage = select("#main-image");
 swapImage(img, "linktoyournewimage.com", "optional new alt text")
 ```
 
+## Insert styles
+
+Use this to insert new CSS styles using Javascript.
+
+```javascript
+function insertStyles(styleblock) {
+    var styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styleblock;
+    document.head.appendChild(styleSheet);
+}
+```
+
+**Example in use**
+
+The styles that go in the *styleblock* variable should be minified using a service like <https://css.github.io/csso/csso.html>
+
+```javascript
+var styleblock = "h1{color:blue}.class-name{color:green}#id-name{color:red}";
+insertStyles(styleblock);
+```
+
+
 ## Do different AB tests within query string audiences on the same page
 
 Sometimes, you'll want to run a different split test within different audiences on the same page.
