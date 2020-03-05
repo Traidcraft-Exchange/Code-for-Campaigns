@@ -1,26 +1,36 @@
-<!-- Split test whether the presence of a link shown on mobile to jump down to the form increases conversion rate or not. Started 20/02/2020 15:00-->
-<!-- Requires the select, fillField and hide helper function-->
+<!--
+
+Split test whether the presence of a link shown on mobile to jump down to the form increases conversion rate or not.
+
+Link needs an id of "mobile-link-to-form"
+
+Requires the generateAB, select, fillField and hide helper functions
+
+Requires a hidden field in a form. (Called ab_mobile_link)
+-->
 <script>
-    document.addEventListener('DOMContentLoaded', function (event) {
+    document.addEventListener('DOMContentLoaded', function () {
+
         var abField = select('input[name="submitted[ab_mobile_link]"]');
 
-        if (AorB === "A") {
-            // Put what to do for Group A here
-            // Show button, record that button was shown and if button was on screen or not
-            var buttonOnScreen = window.innerWidth < 780 ? "and on a mobile screen so button was visible." : "but on a desktop screen so button was not visible.";
-            var logMessage = "A. Button was available, ".concat(buttonOnScreen);
-            fillField(abField, logMessage);
+        var screenWidth = window.innerWidth < 780 ? "mobile" : "desktop";
+
+        if (screenWidth === "mobile") {
+            // Do stuff when screen is a mobile
+            if (AorB === "A") {
+                // Do stuff when mobile screen is A
+                fillField(abField, "Mobile, button shown");
+            }
+            else {
+                // Do stuff when mobile screen is B
+                var mobileLinkToForm = select("#mobile-link-to-form");
+                hide(mobileLinkToForm);
+                fillField(abField, "Mobile, button hidden");
+
+            }
         } else {
-            // Put what to do for Group B here
-            // Hide button, record that button wasn't shown
-            var mobileLinkToForm = select("#mobile-link-to-form");
-            hide(mobileLinkToForm);
-
-            var _buttonOnScreen = window.innerWidth < 780 ? "and on a mobile screen." : "and on a desktop screen.";
-
-            var _logMessage = "B. Button was unavailable, ".concat(_buttonOnScreen);
-
-            fillField(abField, _logMessage);
+            // Do stuff when screen is a Desktop
+            fillField(abField, "Desktop");
         }
     });
 </script>
