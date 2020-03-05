@@ -9,28 +9,28 @@ Requires the generateAB, select, fillField and hide helper functions
 Requires a hidden field in a form. (Called ab_mobile_link)
 -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
+    document.addEventListener("DOMContentLoaded", function () {
         var abField = select('input[name="submitted[ab_mobile_link]"]');
-
         var screenWidth = window.innerWidth < 780 ? "mobile" : "desktop";
 
         if (screenWidth === "mobile") {
             // Do stuff when screen is a mobile
             if (AorB === "A") {
                 // Do stuff when mobile screen is A
-                fillField(abField, "Mobile, button shown");
-            }
-            else {
+                var logMessage = "Mobile, button shown";
+                fillField(abField, logMessage);
+            } else {
                 // Do stuff when mobile screen is B
                 var mobileLinkToForm = select("#mobile-link-to-form");
                 hide(mobileLinkToForm);
-                fillField(abField, "Mobile, button hidden");
-
+                var _logMessage = "Mobile, button hidden";
+                fillField(abField, _logMessage);
             }
         } else {
             // Do stuff when screen is a Desktop
-            fillField(abField, "Desktop");
+            var _logMessage2 = "Desktop";
+            fillField(abField, _logMessage2);
         }
     });
+
 </script>
