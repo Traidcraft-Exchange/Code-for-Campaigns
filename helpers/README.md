@@ -24,7 +24,6 @@ It's using old-school Javascript (ES5) so you can use it without worrying about 
 Use this to assign A or B to every visitor to a webpage.
 
 ```javascript
-var AorB = generateAB();
 function generateAB() {
     return (Math.random() > 0.5) ? "A" : "B";
 }
@@ -33,6 +32,9 @@ function generateAB() {
 **Example in use**
 
 ```javascript
+// Generate A or B after you've disregarded any users you don't want to measure. For example, if you're not interested in users on Desktop, only generate A or B after you've separated out mobile users. If you want to measure all users, just do this at the start.
+
+var AorB = generateAB();
 
 if (AorB === "A") {
     // Put what to do for Group A here
