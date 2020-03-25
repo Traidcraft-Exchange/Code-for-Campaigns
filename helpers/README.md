@@ -197,7 +197,7 @@ function swapImage(currentImage, newImageSource) {
 
 ```javascript
 var someImage = select("#main-image");
-swapImage(img, "linktoyournewimage.com", "optional new alt text")
+swapImage(currentImage, newImageSource, newImageAltText);
 ```
 
 ## Insert CSS styles
