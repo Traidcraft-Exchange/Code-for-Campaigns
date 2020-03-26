@@ -13,8 +13,7 @@ You will need to upload the GIF you want to use to an image hosting website. I r
 Then replace the URL in newImageSource below with the URL of your hosted image. If you want blind people to be able to hear what is in the GIF, replace the newImageAltText text with a description of your GIF. You should 100% do this!!
 
 ```
-<style type="text/css">div.content > img {display: none;}
-</style>
+<style type="text/css">div.content > img {display: none;}</style>
 <script>
 window.addEventListener("DOMContentLoaded", function () {
 
