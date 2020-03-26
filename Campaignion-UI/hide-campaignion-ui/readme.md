@@ -6,7 +6,7 @@ Use these instructions to remove the menu bars, tabs, make the background colour
 
 1. Install the Stylus extension. [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/). [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 
-2. <a href="https://raw.githubusercontent.com/Traidcraft-Exchange/Code-for-Campaigns/master/Campaignion-UI/stylus-hide-campaignion-admin-ui.json" download>Download this file</a>. It includes the rules to hide the Campaignion Admin user interface
+2. <a id-"raw-url" href="https://raw.githubusercontent.com/Traidcraft-Exchange/Code-for-Campaigns/master/Campaignion-UI/stylus-hide-campaignion-admin-ui.json" download>Download this file</a>. It includes the rules to hide the Campaignion Admin user interface
 
 3. Open the Stylus options. Click on the {S} logo in your browser add-ons section. Select 'Options'
 
