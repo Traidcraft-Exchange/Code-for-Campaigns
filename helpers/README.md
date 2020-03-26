@@ -243,11 +243,13 @@ function generateAB() {
     return (Math.random() > 0.5) ? "A" : "B";
 }
 
-function getQueryStrings(query_string_name) {
-    var all_query_strings = new URL(window.location).search;
-    var searchParams = new URLSearchParams(all_query_strings);
-    return searchParams.get(query_string_name);
-}
+function getQueryString(name) {
+    var result = location.href.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+    if (result == null || result.length < 1) {
+        return "";
+    }
+    return decodeURIComponent(result[1]);
+};
 
 var AorB = generateAB();
 var utm_campaign = getQueryStrings("utm_campaign");
