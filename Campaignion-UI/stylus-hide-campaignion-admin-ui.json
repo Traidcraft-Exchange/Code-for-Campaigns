@@ -1,0 +1,23 @@
+[
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1585217646009,
+		"name": "Hide Admin UI on Campaignion",
+		"sections": [
+			{
+				"code": " .tabs,\n #ae-menu-show,\n .contextual-links-wrapper,\n .zEWidget-launcher,\n .messages,\n #ae-bar,\n #Embed,\n .action-links,\n #ae-popups {\n     display: none !important;\n }\n\n .node-unpublished {\n     background-color: rgba(0, 0, 0, 0);\n }\n\n body {\n     padding: 0 !important;\n }",
+				"domains": [
+					"action.traidcraft.org.uk"
+				]
+			}
+		],
+		"updateDate": 1585217720796,
+		"_id": "f4cb1318-b8de-4798-bed3-8066abf3f79b",
+		"_rev": 1585217720796,
+		"id": 3
+	}
+]
