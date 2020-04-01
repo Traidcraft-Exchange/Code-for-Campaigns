@@ -2,7 +2,7 @@ This is how to use a GIF as your campaign image in Campaignion.
 
 If you try to add a moving GIF as your campaign image in Campaignion, it wont' work. Campaignion converts moving GIFs into static GIFs when you upload it. (I think.)
 
-So just add any image as your campaign image. (A small transparent image would perfom best.)
+Add an appropriate image as your campaign image. (A small transparent image would make the webpage perfom best.)
 
 Then put the code below in the Source of the main content of your campaign.
 
@@ -13,7 +13,9 @@ You will need to upload the GIF you want to use to an image hosting website. I r
 Then replace the URL in newImageSource below with the URL of your hosted image. If you want blind people to be able to hear what is in the GIF, replace the newImageAltText text with a description of your GIF. You should 100% do this!!
 
 ```
+<!-- This hides the campaign image you uploaded for the split-second before the Javascript is finished. -->
 <style type="text/css">div.content > img {display: none;}</style>
+
 <script>
 window.addEventListener("DOMContentLoaded", function () {
 
@@ -40,6 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
     swapImage(currentImage, newImageSource, newImageAltText);
 
     var styleblock = "div.content > img {height: auto; width: 430px; display: block !important}";
+    
     insertStyles(styleblock);
 
 });
