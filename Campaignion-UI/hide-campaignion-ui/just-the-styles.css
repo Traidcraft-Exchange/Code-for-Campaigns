@@ -1,0 +1,19 @@
+ .tabs,
+ #ae-menu-show,
+ .contextual-links-wrapper,
+ .zEWidget-launcher,
+ .messages,
+ #ae-bar,
+ #Embed,
+ .action-links,
+ #ae-popups {
+     display: none !important;
+ }
+
+ .node-unpublished {
+     background-color: rgba(0, 0, 0, 0);
+ }
+
+ body {
+     padding: 0 !important;
+ }
