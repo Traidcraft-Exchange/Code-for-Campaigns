@@ -1,6 +1,4 @@
-<style>
-caption,div.table_wrapper,table,td,td span,th,th span,thead,tr{box-sizing:border-box}html{scroll-behavior:smooth}#block-yui_3_17_2_1_1587394532894_4028{width:99vw;margin-left:calc(50% - 50vw)}.table_wrapper{overflow:auto;border:1px solid #fafafa;padding:8px;margin-left:8px;border-right:none}table.companies{border-collapse:collapse;overflow-x:scroll;color:#275573;line-height:1.2;background-color:#fff;table-layout:fixed;width:100%}table.companies thead{font-size:90%}table.companies th{padding:10px 0 10px 8px;text-align:center;font-size:80%;vertical-align:top;font-weight:400;width:150px;border-left:16px solid #fafafa}table.companies th:first-child{min-width:130px;border-left:none}table.companies th:not(:first-child){background-color:#fafafa;border-bottom:4px solid #275573}table.companies td:not(.company_name){padding:10px 5px;border-left:16px solid #fafafa}table.companies td{border-top:24px solid #fafafa}td.company_name{font-size:80%;color:#fafafa}td.company_name span{background-color:#275573;padding:10px 15px 10px 5px;border-radius:5px;display:inline-block;width:90%;font-weight:500}.red{background-color:#cf4a32}.yellow{background-color:#eaeb48}.green{background-color:#41e64a}.clickable{cursor:pointer}.clickable::before{text-decoration:underline}.green::before,.red::before,.yellow::before{display:block;border-radius:5px;background-color:rgba(247, 247, 247, .85);text-align:center;margin:0 auto;box-shadow:0 4px 6px 0 hsla(0, 0%, 0%, 0.2);color:#1a1a1a;font-size:90%}.red::before{content:"No";padding:2px 0}.yellow::before{content:"Some progress";padding:2px 6px}.green::before{content:"Yes";padding:2px 5px;color:#1a1a1a}.see_details{color:#f7f7f7;font-size:85%;display:block;text-decoration:underline;font-weight:400}.see_details:empty{display:none}.company_name > span > .included_brands{border-top:1px solid white;border-radius:0;font-size:80%;padding-left:0}.visually-hidden{position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}@media only screen and (min-width:1024px){.table_wrapper{border-right:1px solid #fafafa}}@media only screen and (max-width:1024px){.green::before,.red::before,.yellow::before{text-align:left}}
-</style>
+<style>caption,div.table_wrapper,table,td,td span,th,th span,thead,tr{box-sizing:border-box}html{scroll-behavior:smooth}#block-yui_3_17_2_1_1587394532894_4028{width:99vw;margin-left:calc(50% - 50vw)}.table_wrapper{overflow:auto;border:1px solid #fafafa;padding:8px;margin-left:8px;border-right:none}table.companies{border-collapse:collapse;overflow-x:scroll;color:#275573;line-height:1.2;background-color:#fff;table-layout:fixed;width:100%}table.companies thead{font-size:90%}table.companies th{padding:10px 0 10px 8px;text-align:center;font-size:80%;vertical-align:top;font-weight:400;width:150px;border-left:16px solid #fafafa}table.companies th:first-child{min-width:130px;border-left:none}table.companies th:not(:first-child){background-color:#fafafa;border-bottom:4px solid #275573}table.companies td:not(.company_name){padding:10px 5px;border-left:16px solid #fafafa}table.companies td{border-top:24px solid #fafafa}td.company_name{font-size:80%;color:#fafafa}td.company_name span{background-color:#275573;padding:10px 15px 10px 5px;border-radius:5px;display:inline-block;width:90%;font-weight:500}.red{background-color:#cf4a32}.yellow{background-color:#eaeb48}.green{background-color:#41e64a}.clickable{cursor:pointer}.clickable::before{text-decoration:underline}.green::before,.red::before,.yellow::before{display:block;border-radius:5px;background-color:rgba(247, 247, 247, .85);text-align:center;margin:0 auto;box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);color:#1a1a1a;font-size:90%}.red::before{content:"No";padding:2px 0}.yellow::before{content:"Some progress";padding:2px 6px}.green::before{content:"Yes";padding:2px 5px;color:#1a1a1a}.see_details{color:#f7f7f7;font-size:85%;display:block;text-decoration:underline;font-weight:400}.see_details:empty{display:none}.company_name>span>.included_brands{border-top:1px solid white;border-radius:0;font-size:80%;padding-left:0}.visually-hidden{position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}@media only screen and (min-width:1024px){.table_wrapper{border-right:1px solid #fafafa}}</style>
 
 <div class="table_wrapper">
     <table class="companies">
@@ -280,22 +278,4 @@ caption,div.table_wrapper,table,td,td span,th,th span,thead,tr{box-sizing:border
     </table>
 </div>
 
-<script>
-
-    var clickableCells = Array.from(document.getElementsByClassName("clickable"));
-
-    function skipToDetails() {
-        location.hash = "#" + "details";
-    };
-    function removeHash() {
-        history.pushState("", document.title, window.location.pathname
-            + window.location.search);
-    }
-    clickableCells.forEach(function (item) {
-        item.addEventListener('click', function () {
-            skipToDetails();
-            removeHash();
-        });
-    });
-
-</script>
+<script>var clickableCells=Array.from(document.getElementsByClassName("clickable"));function skipToDetails(){location.hash="#details"};function removeHash(){history.pushState("",document.title,window.location.pathname+window.location.search)}clickableCells.forEach(function(item){item.addEventListener('click',function(){skipToDetails();removeHash()})});</script>
