@@ -1,285 +1,278 @@
 <style>
-caption,div.table_wrapper,table,td,td span,th,th span,thead,tr{box-sizing:border-box}html{scroll-behavior:smooth}#block-yui_3_17_2_1_1587394532894_4028{width:99vw;margin-left:calc(50% - 50vw)}.table_wrapper{overflow:auto;border:1px solid #fafafa;padding:8px;margin-left:8px;border-right:none}table.companies{border-collapse:collapse;overflow-x:scroll;color:#275573;line-height:1.2;background-color:#fff;table-layout:fixed;width:100%}table.companies thead{font-size:90%}table.companies th{padding:10px 0 10px 8px;text-align:center;font-size:80%;vertical-align:top;font-weight:400;width:150px;border-left:16px solid #fafafa}table.companies th:first-child{min-width:130px;border-left:none}table.companies th:not(:first-child){background-color:#fafafa;border-bottom:4px solid #275573}table.companies td:not(.company_name){padding:10px 5px;border-left:16px solid #fafafa}table.companies td{border-top:24px solid #fafafa}td.company_name{font-size:80%;color:#fafafa}td.company_name span{background-color:#275573;padding:10px 15px 10px 5px;border-radius:5px;display:inline-block;width:90%;font-weight:500}.red{background-color:#cf4a32}.yellow{background-color:#eaeb48}.green{background-color:#41e64a}.clickable{cursor:pointer}.clickable::before{text-decoration:underline}.green::before,.red::before,.yellow::before{display:block;border-radius:5px;background-color:rgba(247, 247, 247, .85);text-align:center;margin:0 auto;box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);color:#1a1a1a;font-size:90%}.red::before{content:"No";padding:2px 0}.yellow::before{content:"Some progress";padding:2px 6px}.green::before{content:"Yes";padding:2px 5px;color:#1a1a1a}.see_details{color:#f7f7f7;font-size:85%;display:block;text-decoration:underline;font-weight:400}.see_details:empty{display:none}.company_name>span>.included_brands{border-top:1px solid white;border-radius:0;font-size:80%;padding-left:0}.visually-hidden{position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}@media only screen and (min-width:1024px){.table_wrapper{border-right:1px solid #fafafa}}
-</style>
-
-<div class="table_wrapper">
-    <table class="companies">
-        <caption class="visually-hidden">Traidcraft Exchange's assessment of each brand's response to the fast fashion
-            crisis</caption>
-        <thead>
+    caption,div.table_wrapper,table,td,td span,th,th span,thead,tr{box-sizing:border-box}html{scroll-behavior:smooth}#block-yui_3_17_2_1_1587394532894_4028{width:99vw;margin-left:calc(50% - 50vw)}.table_wrapper{overflow:auto;border:1px solid #fafafa;padding:8px;margin-left:8px;border-right:none}table.companies{border-collapse:collapse;overflow-x:scroll;color:#275573;line-height:1.2;background-color:#fff;table-layout:fixed;width:100%}table.companies thead{font-size:90%}table.companies th{padding:10px 0 10px 8px;text-align:center;font-size:80%;vertical-align:top;font-weight:400;width:150px;border-left:16px solid #fafafa}table.companies th:first-child{min-width:130px;border-left:none}table.companies th:not(:first-child){background-color:#fafafa;border-bottom:4px solid #275573}table.companies td:not(.company_name){padding:10px 5px;border-left:16px solid #fafafa}table.companies td{border-top:24px solid #fafafa}td.company_name{font-size:80%;color:#fafafa}td.company_name span{background-color:#275573;padding:10px 15px 10px 5px;border-radius:5px;display:inline-block;width:90%;font-weight:500}.red{background-color:#cf4a32}.yellow{background-color:#eaeb48}.green{background-color:#41e64a}.clickable{cursor:pointer}.clickable::before{text-decoration:underline}.green::before,.red::before,.yellow::before{display:block;border-radius:5px;background-color:rgba(247, 247, 247, .85);text-align:center;margin:0 auto;box-shadow:0 4px 6px 0 hsla(0,0%,0%,0.2);color:#1a1a1a;font-size:90%}.red::before{content:"No";padding:2px 0}.yellow::before{content:"Some progress";padding:2px 6px}.green::before{content:"Yes";padding:2px 5px;color:#1a1a1a}.see_details{color:#f7f7f7;font-size:85%;display:block;text-decoration:underline;font-weight:400}.see_details:empty{display:none}.company_name>span>.included_brands{border-top:1px solid white;border-radius:0;font-size:80%;padding-left:0}.visually-hidden{position:absolute;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}@media only screen and (min-width:1024px){.table_wrapper{border-right:1px solid #fafafa}}
+    </style>
+    
+    <div class="table_wrapper">
+        <table class="companies">
+            <caption class="visually-hidden">Traidcraft Exchange's assessment of each brand's response to the fast fashion
+                crisis</caption>
+            <thead>
+                <tr>
+                    <!-- Top line header -->
+                    <th><span class="visually-hidden">Brand</span></th>
+                    <th>1. Public statement?</th>
+                    <th>2. Paid suppliers for finished products?</th>
+                    <th>3. Paid suppliers' costs?</th>
+                    <th>4. Workers paid for past work?</th>
+                    <th>5. Workers paid during crisis?</th>
+                    <th>6. Workers have protective equipment?</th>
+                    <!-- End of top line header -->
+                </tr>
+            </thead>
+    
             <tr>
-                <!-- Top line header -->
-                <th><span class="visually-hidden">Brand</span></th>
-                <th>1. Public statement?</th>
-                <th>2. Paid suppliers for finished products?</th>
-                <th>3. Paid suppliers' costs?</th>
-                <th>4. Workers paid for past work?</th>
-                <th>5. Workers paid during crisis?</th>
-                <th>6. Workers have protective equipment?</th>
-                <!-- End of top line header -->
-            </tr>
-        </thead>
-
-        <tr>
-            <!-- Primark -->
-            <td class="company_name"><span>Primark</span></td>
-
-            <!-- Qu 1 -->
-            <td class="green clickable"></td>
-
-            <!-- Qu 2 -->
-            <td class="yellow clickable"></td>
-
-            <!-- Qu 3 -->
-            <td class="yellow clickable"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Primark -->
-        </tr>
-        <tr>
-            <!-- Arcadia -->
-            <td class="company_name"><span>Arcadia<span class="included_brands">Includes:
-                        Burton, Dorothy Perkins, Topshop</span><a href="#theBrands" class="see_details">See all
-                        brands</a></span>
-
+                <!-- Primark -->
+                <td class="company_name"><span>Primark<span class="included_brands">Owned by: Associated British Foods</span></span></td>
+    
                 <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Arcadia -->
-        </tr>
-
-        <tr>
-            <!-- Clarks -->
-            <td class="company_name"><span>Clarks</span></td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Clarks -->
-        </tr>
-
-        <tr>
-            <!-- Edinburgh Woollen Mill -->
-            <td class="company_name"><span>Edinburgh <br>Woollen Mill<span class="included_brands">Includes:
-                        Peacocks</span><a href="#theBrands" class="see_details">See all brands</a></span>
-            </td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Edinburgh Woollen Mill -->
-        </tr>
-
-        <tr>
-            <!-- John Lewis -->
-            <td class="company_name"><span>John Lewis</span></td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of John Lewis -->
-        </tr>
-
-        <tr>
-            <!-- Marks & Spencer -->
-            <td class="company_name"><span>Marks & <br>Spencer</span>
-            </td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Marks & Spencer -->
-        </tr>
-
-        <tr>
-            <!-- Matalan -->
-            <td class="company_name"><span>Matalan</span></td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Matalan -->
-        </tr>
-
-        <tr>
-            <!-- Next -->
-            <td class="company_name"><span>Next</span></td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Next -->
-        </tr>
-
-        <tr>
-            <!-- Pentland -->
-            <td class="company_name"><span>Pentland<span class="included_brands">Includes:
-                        Berghaus, JD Sports, Millets</span><a href="#theBrands" class="see_details">See all
-                        brands</a></span></td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Pentland -->
-        </tr>
-
-        <tr>
-            <!-- Sports Direct -->
-            <td class="company_name"><span>Sports Direct<span class="included_brands">Includes:
-                House of Fraser, Jack Wills, Flannels</span>
-                    <a href="#theBrands" class="see_details">See all brands</a></span></td>
-
-            <!-- Qu 1 -->
-            <td class="red"></td>
-
-            <!-- Qu 2 -->
-            <td class="red"></td>
-
-            <!-- Qu 3 -->
-            <td class="red"></td>
-
-            <!-- Qu 4 -->
-            <td class="red"></td>
-
-            <!-- Qu 5 -->
-            <td class="red"></td>
-
-            <!-- Qu 6 -->
-            <td class="red"></td>
-
-            <!-- End of Sports Direct -->
-        </tr>
-    </table>
-</div>
-
-<script>
-var clickableCells=Array.from(document.getElementsByClassName("clickable"));function skipToDetails(){location.hash="#details"};function removeHash(){history.pushState("",document.title,window.location.pathname+window.location.search)}clickableCells.forEach(function(item){item.addEventListener('click',function(){skipToDetails();removeHash()})});
-</script>
+                <td class="green clickable"></td>
+    
+                <!-- Qu 2 -->
+                <td class="yellow clickable"></td>
+    
+                <!-- Qu 3 -->
+                <td class="yellow clickable"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Primark -->
+            </tr>
+            <tr>
+                <!-- Arcadia -->
+                <td class="company_name"><span>Arcadia<span class="included_brands">Includes: Burton, Dorothy Perkins, Topshop</span><a href="#theBrands" class="see_details">See all brands</a></span>
+    
+                    <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Arcadia -->
+            </tr>
+    
+            <tr>
+                <!-- Clarks -->
+                <td class="company_name"><span>Clarks</span></td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Clarks -->
+            </tr>
+    
+            <tr>
+                <!-- Edinburgh Woollen Mill -->
+                <td class="company_name"><span>Edinburgh <br>Woollen Mill<span class="included_brands">Includes: Peacocks</span><a href="#theBrands" class="see_details">See all brands</a></span>
+                </td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Edinburgh Woollen Mill -->
+            </tr>
+    
+            <tr>
+                <!-- John Lewis -->
+                <td class="company_name"><span>John Lewis</span></td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of John Lewis -->
+            </tr>
+    
+            <tr>
+                <!-- Marks & Spencer -->
+                <td class="company_name"><span>Marks & <br>Spencer</span>
+                </td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Marks & Spencer -->
+            </tr>
+    
+            <tr>
+                <!-- Matalan -->
+                <td class="company_name"><span>Matalan</span></td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Matalan -->
+            </tr>
+    
+            <tr>
+                <!-- Next -->
+                <td class="company_name"><span>Next</span></td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Next -->
+            </tr>
+    
+            <tr>
+                <!-- Pentland -->
+                <td class="company_name"><span>Pentland<span class="included_brands">Includes: Berghaus, JD Sports, Millets</span><a href="#theBrands" class="see_details">See all brands</a></span></td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Pentland -->
+            </tr>
+    
+            <tr>
+                <!-- Sports Direct -->
+                <td class="company_name"><span>Sports Direct<span class="included_brands">Includes: House of Fraser, Jack Wills, Flannels</span><a href="#theBrands" class="see_details">See all brands</a></span></td>
+    
+                <!-- Qu 1 -->
+                <td class="red"></td>
+    
+                <!-- Qu 2 -->
+                <td class="red"></td>
+    
+                <!-- Qu 3 -->
+                <td class="red"></td>
+    
+                <!-- Qu 4 -->
+                <td class="red"></td>
+    
+                <!-- Qu 5 -->
+                <td class="red"></td>
+    
+                <!-- Qu 6 -->
+                <td class="red"></td>
+    
+                <!-- End of Sports Direct -->
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+    var clickableCells=Array.from(document.getElementsByClassName("clickable"));function skipToDetails(){location.hash="#details"};function removeHash(){history.pushState("",document.title,window.location.pathname+window.location.search)}clickableCells.forEach(function(item){item.addEventListener('click',function(){skipToDetails();removeHash()})});
+    </script>
