@@ -1,0 +1,35 @@
+<script>
+// Stops keyboard-only uses entering the 'disabled' country field 
+window.addEventListener("DOMContentLoaded", function () {
+	const selectorField = document.querySelector(".webform-component--country > .selecter");
+	selectorField.setAttribute("tabindex", "-1");
+});
+</script>
+
+/* This is for a country field. Edit the class if using a different label.*/
+<style>
+.selecter-selected {
+    background-image: none !important;
+    cursor: default !important;
+    background-color: #f2f1ef !important;
+    color: #275573 !important;
+    padding: 14.4px 10.8px!important;
+    font-size: 80% !important;
+}
+
+.webform-component--country > label {
+    font-size: 80%;
+    cursor: default;
+}
+
+.webform-component--country > label > span {
+    display: none;
+}
+.selecter.open .selecter-selected, .selecter.focus .selecter-selected {
+    box-shadow: none !important;
+}
+
+.selecter-options {
+    display: none !important;
+}
+</style>
