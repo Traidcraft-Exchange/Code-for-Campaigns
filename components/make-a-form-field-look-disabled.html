@@ -9,29 +9,34 @@ window.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-<style>	
-.selecter-selected {
-    background-image: none !important;
-    cursor: default !important;
-    background-color: #f2f1ef !important;
-    color: #275573 !important;
-    padding: 14.4px 10.8px!important;
-    font-size: 80% !important;
-}
+<style type="text/css">
+	.webform-component--street-address,
+	.webform-component--postcode {
+		display: none;
+	}
 
-.webform-component--country > label {
-    font-size: 80%;
-    cursor: default;
-}
+	.selecter-selected {
+		background-image: none !important;
+		cursor: default !important;
+		background-color: #f2f1ef !important;
+		color: #275573 !important;
+		padding: 14.4px 10.8px !important;
+		font-size: 80% !important;
+	}
 
-.webform-component--country > label > span {
-    display: none;
-}
-.selecter.open .selecter-selected, .selecter.focus .selecter-selected {
-    box-shadow: none !important;
-}
+	.webform-component--country>label {
+		font-size: 80%;
+		cursor: default;
+	}
 
-.selecter-options {
-    display: none !important;
-}
+	.webform-component--country>label>span,
+	webform-component--country>select,
+	.selecter-options {
+		display: none !important;
+	}
+
+	.selecter.open .selecter-selected,
+	.selecter.focus .selecter-selected {
+		box-shadow: none !important;
+	}
 </style>
