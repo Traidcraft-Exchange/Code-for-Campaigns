@@ -1,3 +1,5 @@
+/* This is for a country field. Edit the class if using a different label.*/
+
 .selecter-selected {
     background-image: none !important;
     cursor: default !important;
