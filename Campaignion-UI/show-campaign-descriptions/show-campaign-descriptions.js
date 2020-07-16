@@ -78,7 +78,7 @@
                     const newRowNumber = Number(currentRowNumber) + 1;
                     pathNameCollector.setAttribute("rows", newRowNumber);
                     pathnamesSoFar.push(pathname);
-                    pathNameCollector.value = pathNameCollector.value + `"${pathname}": "",\n`;
+                    pathNameCollector.value = pathNameCollector.value + `\t\t"${pathname}": "",\n`;
                 }
 
             }
@@ -86,8 +86,6 @@
         }, false);
 
     }
-
-
 
     function insertCampaignDescription(campaign, description) {
         const div = document.createElement("div");
@@ -119,8 +117,5 @@
     }
 
     getCampaignsWithDescriptions();
-
-
-
 
 })();
