@@ -35,7 +35,7 @@
 
     */
 
-    const collectPathnamesMode = true;
+    const collectPathnamesMode = false;
 
 
     const campaignDescriptions = {
