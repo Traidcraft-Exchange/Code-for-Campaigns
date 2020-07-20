@@ -107,7 +107,7 @@
 
         allCampaigns.forEach((campaign) => {
 
-            const campaignLink = campaign.children[1].children[0].children[0].href;
+            const campaignLink = campaign.querySelector(".heading > .title > a").href;
 
             const campaignPathname = new URL(campaignLink).pathname;
             const campaignPathnameWithoutLeadingSlash = campaignPathname.replace("/", "");
@@ -115,13 +115,12 @@
             if (campaignDescriptions.hasOwnProperty(campaignPathname)) {
 
                 const description = campaignDescriptions[campaignPathname];
-
                 insertCampaignDescription(campaign, description);
             }
 
             else if (campaignDescriptions.hasOwnProperty(campaignPathnameWithoutLeadingSlash)) {
-                const description = campaignDescriptions[campaignPathnameWithoutLeadingSlash];
 
+                const description = campaignDescriptions[campaignPathnameWithoutLeadingSlash];
                 insertCampaignDescription(campaign, description);
             }
 
@@ -129,6 +128,5 @@
     }
 
     getCampaignsWithDescriptions();
-
 
 })();
