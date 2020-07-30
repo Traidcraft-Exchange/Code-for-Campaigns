@@ -1,7 +1,7 @@
 /*
 
         This script lets you automatically show some internal descriptions on your list of campaigns in Campaignion.
-        You'll need a browser extension like Tampermonkey to use it. Change the URL in the @match section on line 32 below to the Campaignion URL you use
+        You'll need a browser extension like Tampermonkey to use it. Change the URL in the @match section on line 34 below to the Campaignion URL you use
 
         In the campaignDescriptions section below that starts on line 40, put a list of pathnames (the text in the URL after the action.domain.org.uk address) and your internal description
 
@@ -14,7 +14,7 @@
             "/another-campaign-pathname": "another internal description"
          }
 
-         To make the formatting of this a bit easier, go down to line 38. Then switch `const collectPathnamesMode = false;` to `const collectPathnamesMode = true;`
+         To make the formatting of this a bit easier, go down to line 51. Then switch `const collectPathnamesMode = false;` to `const collectPathnamesMode = true;`
 
          Then you can click on the campaigns you want to describe and it will make a list of them in the right format at the top of the screen.
          Paste that into your campaignDescriptions section and add the description after each one.
@@ -37,8 +37,6 @@
 (function () {
     "use strict";
 
-    const collectPathnamesMode = false;
-
     const campaignDescriptions = {
         // Put campaign descriptions here
 
@@ -50,7 +48,12 @@
 
     };
 
+    const collectPathnamesMode = false;
 
+    // You shouldn't need to edit anything below this
+
+
+    
     if (collectPathnamesMode === true) {
         runCollectPathnamesMode();
     }
