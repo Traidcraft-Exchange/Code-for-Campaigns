@@ -1,6 +1,6 @@
 # Use a GIF as your campaign image in Campaignion
 
-If you try to add a moving GIF as your campaign image in Campaignion, it wont' work. Campaignion converts moving GIFs into static GIFs when you upload it. (I think.)
+If you try to add a moving GIF as your campaign image in Campaignion, it won't work. Campaignion converts moving GIFs into static GIFs when you upload it. (I think.)
 
 Add an appropriate image as your campaign image. (A small transparent image would make the webpage perfom best.)
 
