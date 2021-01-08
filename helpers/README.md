@@ -65,7 +65,7 @@ function getQueryString(name) {
 **Example in use**
 
 ```javascript
-var utm_campaign = getQueryStrings("utm_campaign");
+var utm_campaign = getQueryString("utm_campaign");
 
 if (utm_campaign === "em") {
     // Put what to do for 'em' here
@@ -252,7 +252,7 @@ function getQueryString(name) {
 };
 
 var AorB = generateAB();
-var utm_campaign = getQueryStrings("utm_campaign");
+var utm_campaign = getQueryString("utm_campaign");
 
 var AorB_Campaign = `${AorB}_${utm_campaign}`
 
