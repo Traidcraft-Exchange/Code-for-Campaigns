@@ -1,0 +1,52 @@
+<script>
+
+    // Takes the query strings from https://traidcraftexchange.org/accts?firstName=Ed&surname=Johnson-Williams&email=name@domain.com
+    // https://traidcraftexchange.org/accts?firstName=*|FNAME|*&surname=*|LNAME|*&email=*|EMAIL|*
+    // We can put those query strings into the Mailchimp email on a per-person basis
+    // Replaces the links from Squarespace to the Impact Stack site with the tags to prefill the form
+
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        function getQueryString(name) {
+            var result = location.href.match(
+                new RegExp("[?&]" + name + "=([^&]+)", "i")
+            );
+
+            if (result == null || result.length < 1) {
+                return "";
+            }
+
+            return decodeURIComponent(result[1]);
+        }
+
+        var firstName = getQueryString("firstName");
+        var surname = getQueryString("surname");
+        var email = getQueryString("email");
+        var buttons = Array.from(
+            document.querySelectorAll("a.sqs-block-button-element")
+        );
+
+        var actionURL = "https://action.traidcraft.org.uk/say-yes-green-trade-add-your-name"
+
+        if (firstName && surname && email) {
+            buttons.forEach(function (button) {
+                button.href = ""
+                    .concat(actionURL, "#p:first_name=")
+                    .concat(firstName, "&p:last_name=")
+                    .concat(surname, "&p:email=")
+                    .concat(email);
+            });
+        }
+
+        if (firstName && surname && !email) {
+            buttons.forEach(function (button) {
+                button.href = ""
+                    .concat(actionURL, "#p:first_name=")
+                    .concat(firstName, "&p:last_name=")
+                    .concat(surname)
+            });
+        }
+    });
+
+</script>
