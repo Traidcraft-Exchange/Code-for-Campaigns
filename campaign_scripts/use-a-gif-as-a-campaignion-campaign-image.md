@@ -16,7 +16,7 @@ Then replace the URL in newImageSource below with the URL of your hosted image. 
 
 Put the code below in the Source of the main content of your campaign.
 
-```
+```html
 <!-- This hides the campaign image you uploaded for the split-second before the Javascript is finished. -->
 <style type="text/css">div.content > img {display: none;}</style>
 
