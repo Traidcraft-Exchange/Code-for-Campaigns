@@ -6,7 +6,7 @@ Putting this script in the source of your Content submits the form on page two a
 
 Instead of the `clickSubmitButton` function, you could put any other Javascript that you want to load only on page 2 of the action.
 
-```javascript
+```html
 <script>
     // Put the node ID of the campaign here
     var nodeID = "173";
