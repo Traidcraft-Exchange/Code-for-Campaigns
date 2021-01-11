@@ -29,7 +29,7 @@
         var surname = getQueryString("surname");
         var email = getQueryString("email");
 
-
+        // Just find the buttons that start with the action URL
         var buttons = Array.from(
             document.querySelectorAll('a[href^="'.concat(actionURL, '"]'))
         );
