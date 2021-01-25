@@ -26,55 +26,61 @@
 
 	document.addEventListener("DOMContentLoaded", function (event) {
 
-		// Add the link to the Impact Stack Action
-		// Use this link on Squarespace buttons to the action
-		var actionURL = "https://action.traidcraft.org.uk/accts"
-		"use strict";
 
-		document.addEventListener("DOMContentLoaded", function (event) {
-			var actionURL = "https://action.traidcraft.org.uk/accts";
+        var actionURL = "https://action.traidcraft.org.uk/accts";
 
-			function getQueryString(name) {
-				var result = location.href.match(
-					new RegExp("[?&]" + name + "=([^&]+)", "i")
-				);
+        function getQueryString(name) {
+            var result = location.href.match(
+                new RegExp("[?&]" + name + "=([^&]+)", "i")
+            );
 
-				if (result === null || result.length < 1) {
-					return "";
-				}
+            if (result === null || result.length < 1) {
+                return "";
+            }
 
-				return decodeURIComponent(result[1]);
-			}
+            return decodeURIComponent(result[1]);
+        };
 
-			var firstName = getQueryString("firstName").length
-				? "p:first_name=".concat(getQueryString("firstName"))
-				: "";
-			var surname = getQueryString("surname").length
-				? "p:last_name=".concat(getQueryString("surname"))
-				: "";
-			var email = getQueryString("email").length
-				? "p:email=".concat(getQueryString("email"))
-				: "";
-			var activeopt = getQueryString("activeopt").length
-				? "p:activeopt=".concat(getQueryString("activeopt"))
-				: "";
-			var fullPrefillString = [firstName, surname, email, activeopt]
-				.filter(function (prefillString) {
-					return prefillString.length;
-				})
-				.join("&");
-			var buttons = Array.from(
-				document.querySelectorAll('a[href^="'.concat(actionURL, '"]'))
-			);
-			buttons.forEach(function (button) {
-				var currentButtonURL = button.getAttribute("href");
-				var newButtonLink = ""
-					.concat(currentButtonURL, "#")
-					.concat(fullPrefillString);
-				button.href = newButtonLink;
-			});
-		});
 
-	});
+        function personaliseButtons() {
 
+            var firstName = getQueryString("firstName").length
+                ? "p:first_name=".concat(getQueryString("firstName"))
+                : "";
+            var surname = getQueryString("surname").length
+                ? "p:last_name=".concat(getQueryString("surname"))
+                : "";
+            var email = getQueryString("email").length
+                ? "p:email=".concat(getQueryString("email"))
+                : "";
+            var activeopt = getQueryString("activeopt").length
+                ? "p:activeopt=".concat(getQueryString("activeopt"))
+                : "";
+            var fullPrefillString = [firstName, surname, email, activeopt]
+                .filter(function (prefillString) {
+                    return prefillString.length;
+                })
+                .join("&");
+            var buttons = Array.from(
+                document.querySelectorAll('a[href^="'.concat(actionURL, '"]'))
+            );
+            buttons.forEach(function (button) {
+                var currentButtonURL = button.getAttribute("href");
+                var newButtonLink = ""
+                    .concat(currentButtonURL, "#")
+                    .concat(fullPrefillString);
+                button.href = newButtonLink;
+            });
+        };
+
+        function cleanURLParameters() {
+            (function (l) {
+                window.history.replaceState({}, '', l.pathname + l.hash);
+            })(location);
+        };
+
+        personaliseButtons();
+        cleanURLParameters();
+
+    });
 </script>
