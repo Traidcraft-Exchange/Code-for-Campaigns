@@ -1,15 +1,20 @@
 <!-- A button that clears the form and forgets pre-filled form data -->
 
 <script>
-    window.addEventListener('DOMContentLoaded', function (event) {
+    document.addEventListener('DOMContentLoaded', function () {
+        var firstName = window.sessionStorage.getItem("webform_prefill:s:first_name").replace(/"/g, "");
+        var lastName = window.sessionStorage.getItem("webform_prefill:s:last_name").replace(/"/g, "");
         var button = document.querySelector("button#notyouButton");
-
+        button.innerText = "Not "
+            .concat(firstName, " ")
+            .concat(lastName, "? Start again \u21BA");
         button.addEventListener("click", function (event) {
             event.preventDefault();
             window.sessionStorage.clear();
             location.reload(true);
         });
     });
+
 </script>
 
 <div style="
