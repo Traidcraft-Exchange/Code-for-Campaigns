@@ -1,0 +1,95 @@
+<!--
+    Donation calculator using AlpineJS
+
+    Drupal behaviors loads on each page of the form
+
+    Check for later AlpineJS versions later
+
+    Not working in IE atm
+
+-->
+<script>
+    Drupal.behaviors.behaviorName = {
+        attach: function (context, settings) {
+
+            var contentDiv = document.querySelector("div.webform-content-wrapper");
+            var fixedAmountsButtons = document.querySelectorAll("div.picker");
+            var customAmountInput = document.querySelector("input.select-or-other-other");
+
+            // Check for element before using it. Otherwise, later pages of form won't load
+
+            if (contentDiv != null) {
+                contentDiv.setAttribute("x-data", "returnDonationAmount()");
+            }
+
+            if (fixedAmountsButtons != null) {
+                fixedAmountsButtons.forEach(button => button.setAttribute("x-on:click", "calculateTrees($event.target.parentElement.previousElementSibling.value)"));
+            }
+
+            if (customAmountInput != null) {
+                customAmountInput.setAttribute("x-on:keyup", "calculateTrees($event.target.value)");
+            }
+        }
+    };
+</script>
+
+<script>
+    function processAmount(value) {
+        const donationAmount = Number(value);
+        const treeAmount = donationAmount / 50;
+
+        // If donation amount isn't a number or is a minus number
+        if (isNaN(donationAmount) || donationAmount < 0) {
+            return "0 trees";
+        }
+
+        // If number of trees is less than half
+        else if (treeAmount < 0.5) {
+            return "less than half a tree";
+        }
+
+        // If number of trees is between half and 0.7
+        else if (treeAmount >= 0.5 && treeAmount <= 0.7) {
+            return "about half a tree";
+        }
+
+        // If number of trees is more than 0.7 and less than 1
+        else if (treeAmount > 0.7 && treeAmount < 1) {
+            return "nearly a whole tree";
+        }
+
+        // If number of trees is 1
+        else if (Number(treeAmount.toFixed(0)) === 1) {
+            return "1 tree";
+        }
+
+        // If number of trees is between 1 and 1.7
+        else if (treeAmount > 1 && treeAmount <= 1.7) {
+            return "one and a bit trees";
+        }
+
+        // If number of trees is between 1.7 and less than 2
+        else if (treeAmount > 1.7 && treeAmount < 2) {
+            return "nearly 2 trees";
+        }
+
+        // If number of trees is 2 or more
+        else if (Number(treeAmount.toFixed(0)) >= 2) {
+            return "".concat(Number(treeAmount.toFixed(0)).toLocaleString("en"), " trees");
+        }
+        a
+    }
+
+
+    function returnDonationAmount() {
+        return {
+            'treeAmount': "0 trees",
+            calculateTrees(amount) {
+                this.treeAmount = processAmount(amount);
+            }
+        }
+    }
+</script>
+
+<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<script nomodule="" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer=""></script>
