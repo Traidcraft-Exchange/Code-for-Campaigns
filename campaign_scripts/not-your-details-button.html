@@ -1,0 +1,28 @@
+<!-- A button that clears the form and forgets pre-filled form data -->
+
+<script>
+    window.addEventListener('DOMContentLoaded', function (event) {
+        var button = document.querySelector("button#notyouButton");
+
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            window.sessionStorage.clear();
+            location.reload(true);
+        });
+    });
+</script>
+
+<div style="
+    margin-bottom: 1rem;">
+
+    <button id="notyouButton" type="button" style="
+    -webkit-appearance: button;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 90%;
+    padding: 0;
+    ">
+        Not your details?
+    </button>
+</div>
