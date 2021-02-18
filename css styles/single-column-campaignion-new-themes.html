@@ -4,21 +4,31 @@ Paste this CSS in the Source of Main Text of an action in Campaignion -->
 
 <!-- For top -> form -> content -->
 <style>
-@media print, screen and (min-width: 48.75em) {
-  .grid-container.with-sidebar {
-    grid-template-areas: "top top top top top top top top top" "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar" "content content content content content content content content content";
-    grid-template-rows: auto 1fr;
-  }
-}
+    .grid-container {
+        max-width: 40rem;
+    }
+
+    @media print,
+    screen and (min-width: 48.75em) {
+        .grid-container.with-sidebar {
+            grid-template-areas: "top top top top top top top top top""sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar""content content content content content content content content content";
+            grid-template-rows: auto 1fr;
+        }
+    }
 </style>
 
 
 <!-- For top -> content -> form -->
 <style>
-@media print, screen and (min-width: 48.75em) {
-  .grid-container.with-sidebar {
-    grid-template-areas: "top top top top top top top top top" "content content content content content content content content content" "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar";
-    grid-template-rows: auto 1fr;
-  }
-}
+    .grid-container {
+        max-width: 40rem;
+    }
+
+    @media print,
+    screen and (min-width: 48.75em) {
+        .grid-container.with-sidebar {
+            grid-template-areas: "top top top top top top top top top""content content content content content content content content content""sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar";
+            grid-template-rows: auto 1fr;
+        }
+    }
 </style>
