@@ -11,24 +11,23 @@
 
 <!-- Goes in the form -->
 <!--
-<div x-show="parseFloat(treeAmount.donationAmount) > 0">
-    <p>Lovely stuff. £<span x-text="treeAmount.donationAmount" /> will buy <span x-text="[treeAmount.text]"> 0
+<div x-show="parseFloat(data.donationAmount) > 0">
+    <p>Lovely stuff. £<span x-text="data.donationAmount" /> will buy <span x-text="[data.text]"> 0
             trees</span>.</p>
 
-    <p x-show="treeAmount.topupAmount > 0">Top up your donation by £<span x-text="[treeAmount.topupAmount]" ] /> to
-        donate a<span x-show="Number(treeAmount.donationAmount) >=50">nother</span> whole tree.</p>
+    <p x-show="data.topupAmount < 50">Top up your donation by £<span x-text="[data.topupAmount]" ] /> to
+        donate a<span x-show="Number(data.donationAmount) >=50">nother</span> whole tree.</p>
 </div>
 -->
-
 <script>
     Drupal.behaviors.behaviorName = {
         attach: function (context, settings) {
 
-            var contentDiv = document.querySelector("div.webform-content-wrapper");
-            var fixedAmountsButtons = document.querySelectorAll("div.picker");
+            var contentDiv = document.querySelector("div#form.content");
+
+            var fixedAmountsButtons = document.querySelectorAll("input.donation-amount-buttons");
             var customAmountInput = document.querySelector("input.select-or-other-other");
 
-            // Check for element before using it. Otherwise, later pages of form won't load
 
             if (contentDiv != null) {
                 contentDiv.setAttribute("x-data", "returnDonationAmount()");
@@ -36,7 +35,8 @@
             }
 
             if (fixedAmountsButtons != null) {
-                fixedAmountsButtons.forEach(button => button.setAttribute("x-on:click", "calculateTrees($event.target.parentElement.previousElementSibling.value)"));
+                fixedAmountsButtons.forEach(button => button.setAttribute("x-on:click", "calculateTrees($event.target.value)"));
+
             }
 
             if (customAmountInput != null) {
@@ -45,14 +45,11 @@
         }
     };
 </script>
-
 <script>
     function processAmount(value) {
         const donationAmount = Number(value);
         const treeAmount = donationAmount / 50;
-
         const nextTreeAmount = roundUpToNearest(donationAmount, 50);
-
         const diffToNextTree = nextTreeAmount - donationAmount;
 
         const data = {
@@ -65,68 +62,62 @@
         // If donation amount isn't a number or is a minus number
         if (isNaN(donationAmount) || donationAmount < 0) {
             data.treeAmount = 0;
-            data.text = "0 trees"
+            data.text = "0 acres"
         }
 
         // If number of trees is less than half
         else if (treeAmount < 0.5) {
-            data.text = "less than half a tree"
+            data.text = "less than half a acre"
         }
 
         // If number of trees is between half and 0.7
         else if (treeAmount >= 0.5 && treeAmount <= 0.7) {
-            data.text = "about half a tree"
+            data.text = "about half an acre"
         }
 
         // If number of trees is more than 0.7 and less than 1
         else if (treeAmount > 0.7 && treeAmount < 1) {
-            data.text = "nearly a whole tree"
+            data.text = "nearly a whole acre"
         }
 
         // If number of trees is 1
         else if (Number(treeAmount.toFixed(0)) === 1) {
-            data.text = "1 tree"
+            data.text = "1 acre"
         }
 
         // If number of trees is between 1 and 1.7
         else if (treeAmount > 1 && treeAmount <= 1.7) {
-            data.text = "one and a bit trees"
+            data.text = "one and a bit acres"
         }
 
         // If number of trees is between 1.7 and less than 2
         else if (treeAmount > 1.7 && treeAmount < 2) {
-            data.text = "nearly 2 trees"
+            data.text = "nearly 2 acres"
         }
 
         // If number of trees is 2 or more
         else if (Number(treeAmount.toFixed(0)) >= 2) {
-            data.text = "".concat(Number(treeAmount.toFixed(0)).toLocaleString("en"), " trees")
+            data.text = "".concat(Math.floor(Number(treeAmount)).toLocaleString("en"), " acres")
         };
 
         return data;
     }
 
 
-
-    function roundUpToNearest(numToRound, numToRoundTo) {
-        numToRoundTo = 1 / (numToRoundTo);
-
-        return Math.ceil(numToRound * numToRoundTo) / numToRoundTo;
+    function roundUpToNearest(amount, multiple) {
+        return ((amount / multiple | 0) + 1) * multiple
     }
-
 
     function returnDonationAmount() {
         return {
-            "donationAmount": 0,
-            "treeAmount": 0,
-            "topupAmount": 0,
-            "text": "",
+
+            data: {},
             calculateTrees(amount) {
-                this.treeAmount = processAmount(amount);
+                this.data = processAmount(amount);
             }
         }
     }
 </script>
-
 <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+<script nomodule="true" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js"
+    defer="true"></script>
