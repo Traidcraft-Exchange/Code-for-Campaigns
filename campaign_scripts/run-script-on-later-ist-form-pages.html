@@ -1,0 +1,33 @@
+<!--
+
+    Drupal behaviors runs multiple times on each page
+    So ideally, when you run your script, make a change to the page. And then check for that change in an if statement
+
+    Also, check that a node that only exists on the page you want to run on exists
+
+-->
+<script>
+    Drupal.behaviors.behaviorName = {
+        attach: function (context, settings) {
+
+            var donationAmountNode = document.querySelector("span#donationAmount")
+
+            var formStep = document.querySelector('div.form-steps.webform-progressbar[data-form-steps-current]').getAttribute('data-form-steps-current')
+
+            var doubledDonation = document.querySelector("span#doubledDonation")
+
+            var doubledSentence = document.querySelector("p#doubledSentence")
+
+
+            if (donationAmountNode != null && formStep === '3' && doubledDonation != null && doubledSentence.classList.contains('hide')) {
+
+                var donationAmount = Number(donationAmountNode.innerText)
+
+                doubledDonation.innerText = String(donationAmount * 2)
+
+                doubledSentence.classList.remove('hide')
+
+            }
+        }
+    };
+</script>
